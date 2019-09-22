@@ -1,4 +1,5 @@
-# Cascade
+# Basic
+## Cascade
 
 1. Importance:
     1.1 User !important
@@ -7,7 +8,7 @@
     1.4 User
     1.5 User agent
 
-if A.Importance === B.Importance, then
+if RoolA.Importance === RoolB.Importance then
 
 2. Specificity: (A, B, C, D)
     2.1 inline styles                     // each +1 to A
@@ -15,6 +16,22 @@ if A.Importance === B.Importance, then
     2.1 class, pseudo-classes, attribute  // each +1 to C
     2.1 element, pseudo-element           // each +1 to D  
 
+if  RoolA.Specificity === RoolB.Specifity then
+
+3. Compare order
+
+## Units
+
+%:
+    {font-size} from parent's computed font-size
+    {lengths: width, height, margin, padding, ...} from parent's computed width
+em:
+    {font-size} from parent's computed font-size
+    {lengths} from current element computed font-size
+rem:
+    all from root computed font-size
+vh, vw:
+    from viewport height and width
 
 # Centering
 
