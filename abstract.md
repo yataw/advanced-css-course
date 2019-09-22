@@ -1,4 +1,4 @@
-# Basic
+# Elementary
 ## Cascade
 
 1. Importance:
@@ -32,6 +32,21 @@ rem:
     all from root computed font-size
 vh, vw:
     from viewport height and width
+
+## Box types
+
+1. Block
+    1.1 100% of parent's width
+    1.2 vertically, one after another (add line breaks)
+
+2. Inline
+    2.1 Occupies only content's space
+    2.2. No heights, widths. 
+    2.3 Only horizontal paddings and margins (except <img>). Environment is't taken into
+
+3. Inline-block
+    3.1 Occupies only content's space
+    3.2 No line-breaks
 
 # Centering
 
