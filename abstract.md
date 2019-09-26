@@ -48,8 +48,16 @@ vh, vw:
     3.1 Occupies only content's space
     3.2 No line-breaks
 
+## Development
+
+// You can make alias for following commands in package.json.
+
+node-sass %input%.scss css/style.css -w // watch and compile scss
+live-server // static auto-reload server    
+
 # Centering
 
+1.
 .parent {
     position: relative;
 }
@@ -60,6 +68,11 @@ vh, vw:
     left: 50%;
     transform: translate(-50%, -50%); /*% means element itself*/
 }
+
+2. 
+
+margin: 0 auto;
+
 
 
 # Unsortered
