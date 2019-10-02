@@ -41,8 +41,10 @@ vh, vw:
 
 2. Inline
     2.1 Occupies only content's space
-    2.2. No heights, widths. 
-    2.3 Only horizontal paddings and margins (except <img>). Environment is't taken into
+    2.2 No heights, widths. 
+    2.3 Horizontal paddings and margins (except <img>) take away another elements.
+        Vertical paddings overlap outer content.
+        Verical margins are ignored.
 
 3. Inline-block
     3.1 Occupies only content's space
@@ -55,6 +57,10 @@ vh, vw:
 node-sass %input%.scss css/style.css -w // watch and compile scss
 live-server // static auto-reload server    
 
+## Colors
+    orangered, greenyellow
+    tranparent
+
 # Centering
 
 1.
@@ -64,18 +70,36 @@ live-server // static auto-reload server
 
 .child {
     position: absolute;
-    top: 40%; /*% means from parent*/
+    top: 40%; /*% means from parents height*/
     left: 50%;
-    transform: translate(-50%, -50%); /*% means element itself*/
+    transform: translate(-50%, -50%); /*% means from element sizes itself*/
 }
 
 2. 
 
 margin: 0 auto;
 
+3. For inline elements (text, img, span, font-icons, etc...)
+text-align: center;
+
 
 
 # Unsortered
+
+## Designations
+1. Box // like a container
+2. Form-group // group for button+label or radio-button+label
+
+
+## Transparency
+
+For transparent elem:
+    opacity is inherited (so all subelems'll be transparent), but rgba(..., alpha) is not
+
+## Tips
+    outline is better then border in :focus, :active and etc. because it isn't change the size of the elem
+
+
 
 ## Vertical aligning inline/inline-block elements by:
 - text-align: center;
@@ -83,10 +107,42 @@ margin: 0 auto;
 ## Buttons:
     in/push(half of out): hover, active
     
+    skratch for link (<a> </a> button):
+    .btn {
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        transition: all .2s;
+        padding: 1.5rem 2rem; /* x-padding should be bigger then vertical for beauty/*/
+        
+        &:link,
+        &:visited {
+    
+        }
+    
+        &.hover {
+    
+        }
+    
+        &:active {
+            
+        }
+    }
+    
+## Images
+    - big img require width or height
+    
 ## Pseudo-elements:
     ::after
         you need to add content and display properties
         
 ## Animation:
+### Facts
+    transition: all .2s; // for duration
+    ...
+    transform: ...
+    
     when use delay:
         to set initial state use animation-fill-mode: backwards;
+        
+### Bugfixing
+    try use backface-visibility: hidden;
