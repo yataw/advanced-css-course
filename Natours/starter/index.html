@@ -13,6 +13,25 @@
     <title>Natours | Exciting tours for adventurous people</title>
 </head>
 <body>
+
+<div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+    </label>
+
+    <div class="navigation__background">&nbsp;</div>
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natous</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benefits</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular tours</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+        </ul>
+    </nav>
+</div>
+
 <header class="header">
     <div class="header__logo-box">
         <img src="img/logo-white.png" alt="Logo" class="header__logo">
@@ -108,7 +127,7 @@
         </div>
     </section>
 
-    <section class="section-tours">
+    <section class="section-tours" id="section-tours">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
                 Most popular tours
@@ -142,7 +161,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">297$</p>
                             </div>
-                            <a href="#" class="btn btn_white">Book now!</a>
+                            <a href="#popup" class="btn btn_white">Book now!</a>
                         </div>
                     </div>
                 </div>
@@ -172,7 +191,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">497$</p>
                             </div>
-                            <a href="#" class="btn btn_white">Book now!</a>
+                            <a href="#popup" class="btn btn_white">Book now!</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +221,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">897$</p>
                             </div>
-                            <a href="#" class="btn btn_white">Book now!</a>
+                            <a href="#popup" class="btn btn_white">Book now!</a>
                         </div>
                     </div>
                 </div>
@@ -237,8 +256,7 @@
                 </figure>
                 <div class="story__text">
                     <h3 class="heading-tertiary u-margin-bottom-small">I had the best week with my family</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto at consequuntur
-                        doloribus excepturi fugiat iure labore maiores</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias delectus ea eligendi excepturi mollitia quasi quidem suscipit veniam veritatis vitae, voluptatem? Beatae commodi deleniti fugiat hic, laboriosam quos totam?</p>
                 </div>
             </div>
         </div>
@@ -251,8 +269,7 @@
                 </figure>
                 <div class="story__text">
                     <h3 class="heading-tertiary u-margin-bottom-small">WOW! My life is completely different now</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto at consequuntur
-                        doloribus excepturi fugiat iure labore maiores</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias asperiores aut cupiditate, deleniti deserunt dolorem dolores error, inventore ipsam laboriosam nesciunt odit optio, qui reiciendis repellat reprehenderit ullam vero?</p>
                 </div>
             </div>
         </div>
@@ -337,6 +354,22 @@
         </div>
     </div>
 </footer>
+
+<div class="popup" id="popup">
+    <div class="popup__content">
+        <div class="popup__left">
+            <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
+            <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
+        </div>
+        <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+            <h3 class="heading-tertiary u-margin-bottom-medium">Important &ndash; Please read these terms before booking</h3>
+            <p class="popup__text">Lorem ipsum dolor sit amet, con ea totam?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, esse ipsam possimus quod soluta veritatis. Consectetur dolorem eaque ipsum itaque molestias nesciunt nihil odit pariatur sapiente unde. Officia, quibusdam saepe?Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aperiam, at, earum enim facilis illo ipsum iusto magni minus mollitia nobis nostrum optio perferendis quam repudiandae sunt. Consequatur, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem consequatur corporis debitis, dignissimos dolores doloribus exercitationem fugiat ipsam iure magni minus mollitia natus neque nobis odit quis temporibus, voluptates.</p>
+            <a href="#" class="btn btn_green">Book now</a>
+        </div>
+    </div>
+</div>
 
 <!--<section class="grid-test">
     <div class="row">

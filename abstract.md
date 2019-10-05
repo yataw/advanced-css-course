@@ -130,6 +130,7 @@ For transparent elem:
     
 ## Images
     - big img require width or height
+    - use overflow: hidden in parent element with border-radius to prevent overflowing in corners
     
 ## Pseudo-elements:
     ::after
