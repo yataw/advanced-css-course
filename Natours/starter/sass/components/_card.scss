@@ -5,7 +5,7 @@
     position: relative;
     perspective: 150rem;
     -moz-perspective: 150rem;
-    height: 50rem;
+    height: 52rem;
 
     &__side {
         position: absolute;
@@ -25,7 +25,6 @@
         }
 
         &_back {
-            background-color: greenyellow;
             transform: rotateY(180deg);
 
             &-1 {
@@ -50,6 +49,14 @@
         &_back {
             transform: rotateY(360deg);
         }
+
+        @media only screen and (max-width: 37.5em),
+        only screen and (hover: none) {
+            transform: none;
+        }
+/*        @include respond(tab-port) {
+            transform: none;
+        }*/
     }
 
 
@@ -151,4 +158,54 @@
         font-weight: 100;
     }
 
+
+    //@include respond(tab-port)
+    @media only screen and (max-width: 37.5em),
+        only screen and (hover: none) {
+        height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &__side {
+            height: auto;
+            position: relative;
+            font-size: 2rem;
+            border-radius: 3px;
+            box-shadow: none;
+
+
+            &_back {
+                transform: rotateY(0);
+                -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &:hover &__side_front {
+            transform: rotateY(0);
+        }
+
+        &__details {
+            padding: 0 1rem;
+        }
+
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-value {
+            font-size: 4rem;
+        }
+    }
 }

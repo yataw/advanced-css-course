@@ -131,10 +131,56 @@ For transparent elem:
 ## Images
     - big img require width or height
     - use overflow: hidden in parent element with border-radius to prevent overflowing in corners
-    
+    - use line-height: 0 in parent element to prevent smth like "margin-bottom" of image (because image is inline element same as text)
+
+### Responsive images:
+    - density swithing: image depends on pixel density (in retina displays 2 physical pixels match 1 in css)
+        <img srcset="pic1 1x, pic2 2x" alt="pic">
+    - art direction: image depends on viewport size
+        <picture>
+            <source srcset="pic1 1x, pic2 2x" media=(max-width: **em)>
+            <source ... >
+            ...
+            <-- default -->
+            <img srcset="pic1 1x, pic2 2x" alt="pic">
+        </picture>
+        
+        both dpr and direction:
+            <img srcset="1.jpg 300w, 1-large.jpg 1000w"
+                 alt="Photo 1"
+                 sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                 class="class"
+                 src="img/nat-1-large.jpg">
 ## Pseudo-elements:
     ::after
         you need to add content and display properties
+
+## Media query structure:
+ Example:
+    - Scale: [XS, S, M, L, XL]
+    - You default size is M (development size; For example, desktop-first) 
+    - Don't forget make parameterized mixin for @media
+    
+    html {
+        font-size: M%;
+        
+        @media (min-width: XL em) {
+            font-size: XL%;
+        }
+        
+        @media (min-width: L em) {
+            font-size: L%;
+        }
+        
+        @media (max-width: S em) {
+            font-size: S%;
+        }
+        
+        @media (max-width: XS em) {
+            font-size: XS%;
+        }
+    }
+
         
 ## Animation:
 ### Facts
