@@ -61,6 +61,12 @@ live-server // static auto-reload server
     orangered, greenyellow
     tranparent
 
+# Alignment
+
+1. Using flexbox
+
+use margin-right: auto in flex-element, to force its right margin occupies all available space; 
+
 # Centering
 
 1.
@@ -82,6 +88,42 @@ margin: 0 auto;
 3. For inline elements (text, img, span, font-icons, etc...)
 text-align: center;
 
+# Cheat sheet
+
+## Flexbox
+
+Container:
+    - *Main axis direction*
+        flex-direcrtion: row, row-reverse, column, column-reverse
+    - *Align items along the main axis*
+        justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly
+    - *Align items along cross axis*
+        align-items: stretch, flex-start, flex-end, center, baseline
+    - *Align stripes of content along cross axis*
+        align-content: stretch, flex-start, flex-end, center, space-between, space-around
+    - *What to do if elements creeps out the flex-container*
+        flex-wrap: nowrap, wrap, wrap-reverse
+
+Item:
+    - Align
+        align-self: auto, stretch, flex-start, flex-end, center, baseline
+    - Order
+        order: 0 | <integer>
+    - Width properties
+       flex-grow: 0;
+       flex-shrink: 1; // if 0, an element is not allowed to shrink
+       flex-basis: auto;
+       flex: 0 1 auto; // shorthand     
+
+
+## Grid
+% - percentage of parent size (exclude gaps)
+1fr - include gaps
+
+Container:
+
+
+Item:
 
 
 # Unsortered
@@ -153,7 +195,8 @@ For transparent elem:
                  src="img/nat-1-large.jpg">
 ## Pseudo-elements:
     ::after
-        you need to add content and display properties
+        you need to add content and display (the best is inline-block) properties. 
+        and may be add height & width. 
 
 ## Media query structure:
  Example:
@@ -193,3 +236,9 @@ For transparent elem:
         
 ### Bugfixing
     try use backface-visibility: hidden;
+    
+# Troubleshooting
+## Z-index
+    only works with position relative:
+        position: relative;
+        z-index: 5;

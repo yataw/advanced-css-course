@@ -1,3 +1,8 @@
+:root {
+    /*--color-priamary: #eb2f64;*/
+    /*--color-primary-light: #FF3366;*/
+    /*--color-primary-dark: #BA265D;*/
+}
 
 *, *::after, *::before {
     margin: 0;

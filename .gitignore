@@ -1,3 +1,4 @@
 .idea/
 node_modules/
-starter/css/*style.*css
+**/starter/css/*style.*css
+package-lock.json
