@@ -67,6 +67,7 @@ live-server // static auto-reload server
 
 use margin-right: auto in flex-element, to force its right margin occupies all available space; 
 
+::before and ::after flex-container pseudo elements become flex-items. For example, justify-content: center push them apart.
 # Centering
 
 1.
@@ -120,11 +121,49 @@ Item:
 % - percentage of parent size (exclude gaps)
 1fr - include gaps
 
-Container:
+0. Terms
+Row, column, track, area, cell, gap.
+Explicit & implicit grid.
+
+- item - about item
+- content - about content
+- justify - horizontal alignment
+- align - vertical alignment
 
 
-Item:
+1. Container:
 
+- justify-items # aligns content horizontally in grid-areas (cells)
+- align-items # aligns content vertically in grid-areas (cells)
+- justify-content # aligns rows vertically
+- align-content # aligns columns horizontally
+
+
+naming example:
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+then in grid-item:
+    grid-column: col-start 2 / col-end 2; # If colunms have the same name, we use numbers to determine
+
+Adaptive number of columns:
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    
+auto-fill - adds as mush implicit columns as possible    
+auto-fit - adds 0 width implicit columns
+
+
+Adaptive picture-gallary:
+    use 'vw' in grid-template-rows. When you scaleX (decrease viewport width), it'll automatically scaleY. That's why you save pictures aspect ratio.
+
+
+Horizontal alignment.
+Use grid-template-columns: max-content; to set with of grid to max-content. After that horizontal alignment (justify-self: center;) would look more consistently.
+   
+    
+2. Item:
+
+::before and ::after item pseudo elements become grid-items.
+
+grid items (as same as flex items) ignore properties: float, display:inline-block/table-cell, vertical-align
 
 # Unsortered
 
@@ -141,6 +180,15 @@ For transparent elem:
 ## Tips
     outline is better then border in :focus, :active and etc. because it isn't change the size of the elem
 
+## @mixin vs @extend
+
+Mixins add properties separaty in every class. That's why mixin can have paramteres (@include mix(100px))
+
+@Extend add one rule for group of selectors:
+    .a, .b, .c {
+        /* css-properties */
+    }
+That's why it can't use properties.    
 
 
 ## Vertical aligning inline/inline-block elements by:
